@@ -4,6 +4,7 @@ orbs:
   node: circleci/node@5.0.2
   eb: circleci/aws-elastic-beanstalk@2.0.1
   aws-cli: circleci/aws-cli@3.1.1
+  eb: circleci/aws-elastic-beanstalk@2.0.1
   # different jobs are calles later in the workflows sections
 jobs:
   build:
@@ -30,6 +31,12 @@ jobs:
           command: |
            echo "TODO: Install dependencies in the the backend API  "
            npm run api:install
+      # TODO: Lint the frontend
+      - run:
+          name: Front-End Lint
+          command: |
+            echo "TODO: Lint the frontend"
+            npm run frontend:lint
       - run:
        # test front-end application
           name: front-End test
@@ -64,7 +71,8 @@ jobs:
           command: |
             echo "# TODO: Install, build, deploy in both apps"
             npm run deploy
-            
+environment:
+  CHROME_BIN: /usr/bin/google-chrome          
 workflows:
   udagram:
     jobs:
