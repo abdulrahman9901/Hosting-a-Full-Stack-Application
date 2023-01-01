@@ -16,10 +16,10 @@ jobs:
       - node/install:
           node-version: '14.15'
       - run:
-        name: Check install
-        command: |
-          google-chrome --version
-          chromedriver --version         
+          name: Check install
+          command: |
+            google-chrome --version
+            chromedriver --version         
       - checkout
       # Use root level package.json to install dependencies in the frontend app
       - run:
