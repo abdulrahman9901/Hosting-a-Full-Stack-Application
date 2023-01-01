@@ -1,13 +1,14 @@
 version: 2.1
 orbs:
   # orgs contain basc recipes and reproducible actions (install node, aws, etc.)
+  browser-tools: circleci/browser-tools@1.2.4
   node: circleci/node@5.0.2
   eb: circleci/aws-elastic-beanstalk@2.0.1
   aws-cli: circleci/aws-cli@3.1.1
   # different jobs are calles later in the workflows sections
-environment:
-  CHROME_BIN: /usr/bin/google-chrome
 jobs:
+  environment:
+    CHROME_BIN: /usr/bin/google-chrome
   build:
     docker:
       # the base image can run most needed actions with orbs
@@ -15,7 +16,12 @@ jobs:
     steps:
       # install node and checkout code
       - node/install:
-          node-version: '14.15'         
+          node-version: '14.15'
+      - run:
+        name: Check install
+        command: |
+          google-chrome --version
+          chromedriver --version         
       - checkout
       # Use root level package.json to install dependencies in the frontend app
       - run:
