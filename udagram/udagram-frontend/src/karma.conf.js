@@ -27,8 +27,5 @@ module.exports = function (config) {
     autoWatch: true,
     browsers: ['Chrome'],
     singleRun: false,
-    environment:{
-      CHROME_BIN: '/usr/bin/google-chrome karma start --single-run'  
-    } 
   });
 };
