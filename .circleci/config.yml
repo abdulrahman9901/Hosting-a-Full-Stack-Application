@@ -43,7 +43,7 @@ jobs:
           command: |
             npm run frontend:test
           environment: 
-            CHROME_BIN:/usr/bin/google-chrome karma start --single-run
+            CHROME_BIN: /usr/bin/google-chrome karma start --single-run
       # TODO: Build the frontend app
       - run:
           name: Front-End Build
