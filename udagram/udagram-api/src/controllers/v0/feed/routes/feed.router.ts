@@ -76,8 +76,9 @@ router.post('/',
       });
 
       const savedItem = await item.save();
-
+      
       savedItem.url = AWS.getGetSignedUrl(savedItem.url);
+   
       res.status(201).send(savedItem);
     });
 
