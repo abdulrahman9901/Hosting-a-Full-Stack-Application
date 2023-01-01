@@ -9,3 +9,8 @@ eb use udagram-api-dev
             npm run frontend:test
           environment: 
             CHROME_BIN: /usr/bin/google-chrome 
+
+            # Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
