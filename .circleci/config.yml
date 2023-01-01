@@ -5,6 +5,8 @@ orbs:
   eb: circleci/aws-elastic-beanstalk@2.0.1
   aws-cli: circleci/aws-cli@3.1.1
   # different jobs are calles later in the workflows sections
+environment:
+  CHROME_BIN: /usr/bin/google-chrome
 jobs:
   build:
     docker:
@@ -70,8 +72,7 @@ jobs:
           command: |
             echo "# TODO: Install, build, deploy in both apps"
             npm run deploy
-environment:
-  CHROME_BIN: /usr/bin/google-chrome karma start --single-run          
+       
 workflows:
   udagram:
     jobs:
