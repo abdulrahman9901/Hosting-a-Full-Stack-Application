@@ -1,3 +1,11 @@
 eb init udagram-api --platform node.js --region us-east-1
 eb create --sample udagram-api-dev
 eb use udagram-api-dev
+
+    - run:
+       # test front-end application
+          name: front-End test
+          command: |
+            npm run frontend:test
+          environment: 
+            CHROME_BIN: /usr/bin/google-chrome 

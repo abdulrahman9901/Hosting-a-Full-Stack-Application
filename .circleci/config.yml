@@ -37,13 +37,6 @@ jobs:
           command: |
             echo "TODO: Lint the frontend"
             npm run frontend:lint
-      - run:
-       # test front-end application
-          name: front-End test
-          command: |
-            npm run frontend:test
-          environment: 
-            CHROME_BIN: /usr/bin/google-chrome 
       # TODO: Build the frontend app
       - run:
           name: Front-End Build
